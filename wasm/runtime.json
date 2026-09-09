@@ -1,0 +1,10 @@
+{
+  "name": "minecraft-web-jvm",
+  "version": "0.1.0",
+  "javaMajor": 25,
+  "entry": "jvm.js",
+  "wasm": "jvm.wasm",
+  "api": "MinecraftJVM.create",
+  "status": "required-build-artifact",
+  "note": "This manifest describes the Java 25 browser JVM ABI. The binary runtime is built separately and is not Mojang game code."
+}
