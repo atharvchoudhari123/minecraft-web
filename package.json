@@ -5,6 +5,7 @@
   "scripts": {
     "download:assets": "node scripts/download-assets.js",
     "prepare:runtime": "node scripts/prepare-runtime.js",
+    "check:runtime": "node scripts/check-runtime.mjs",
     "build": "node scripts/build.js"
   }
 }
