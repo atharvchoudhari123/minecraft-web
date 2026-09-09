@@ -9,10 +9,18 @@
 <body>
   <main class="launcher">
     <h1>Minecraft 26.2</h1>
-    <p class="subtitle">Browser launcher / WebAssembly runtime</p>
-    <button id="play">Download Assets &amp; Play</button>
+    <p class="subtitle">Independent browser launcher</p>
+
+    <section class="panel">
+      <h2>Use your official game files</h2>
+      <p>Select a Minecraft Java client JAR that you obtained through the official Minecraft launcher. The file stays in this browser's local storage.</p>
+      <button id="import">Import client JAR</button>
+      <p id="file-status">No client JAR imported.</p>
+    </section>
+
+    <button id="play" disabled>Play</button>
     <div class="progress"><div id="bar"></div></div>
-    <p id="status">Ready.</p>
+    <p id="status">Import a client JAR to begin.</p>
     <canvas id="game" tabindex="0"></canvas>
   </main>
   <script type="module" src="./src/launcher.js"></script>
