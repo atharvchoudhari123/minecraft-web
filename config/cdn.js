@@ -1,6 +1,6 @@
 export const CDN = {
-  user: "YOUR_USER",
-  repo: "YOUR_REPO",
+  user: "atharvchoudhari123",
+  repo: "minecraft-web",
   branch: "main"
 };
 
