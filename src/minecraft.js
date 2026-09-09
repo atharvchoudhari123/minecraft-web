@@ -1,21 +1,17 @@
 import { jsDelivr } from "../config/cdn.js";
+import { createBrowserRuntime } from "./runtime.js";
 
-export async function startMinecraft({ canvas, setProgress }) {
-  /*
-   * This is the integration point for the actual browser JVM/runtime.
-   *
-   * Expected runtime files:
-   *   wasm/jvm.js
-   *   wasm/jvm.wasm
-   *
-   * The runtime must provide a browser-compatible JVM and the adapters needed
-   * by Minecraft Java. A normal Minecraft JAR cannot execute directly in a
-   * browser.
-   */
-  setProgress(100, "Runtime placeholder loaded. A compatible WASM JVM is required.");
+export async function startMinecraft({ canvas, setProgress, metadata }) {
+  setProgress(92, "Preparing Java 25 browser runtime...");
 
-  // Fail clearly rather than pretending that a Java JAR is executable as WASM.
-  throw new Error(
-    "No compatible WASM JVM/runtime is installed. Build or provide the runtime in wasm/."
-  );
+  const runtime = await createBrowserRuntime({
+    canvas,
+    metadata,
+    setProgress,
+    runtimeJS: jsDelivr("wasm/jvm.js"),
+    runtimeWasm: jsDelivr("wasm/jvm.wasm")
+  });
+
+  await runtime.start();
+  setProgress(100, "Minecraft runtime started.");
 }
