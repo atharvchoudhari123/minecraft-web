@@ -1,0 +1,10 @@
+{
+  "name": "minecraft-web-26-2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "download:assets": "node scripts/download-assets.js",
+    "prepare:runtime": "node scripts/prepare-runtime.js",
+    "build": "node scripts/build.js"
+  }
+}

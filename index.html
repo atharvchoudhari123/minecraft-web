@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Minecraft 26.2 Web Launcher</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main class="launcher">
+    <h1>Minecraft 26.2</h1>
+    <p class="subtitle">Browser launcher / WebAssembly runtime</p>
+    <button id="play">Download Assets &amp; Play</button>
+    <div class="progress"><div id="bar"></div></div>
+    <p id="status">Ready.</p>
+    <canvas id="game" tabindex="0"></canvas>
+  </main>
+  <script type="module" src="./src/launcher.js"></script>
+</body>
+</html>
