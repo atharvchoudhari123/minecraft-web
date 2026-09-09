@@ -14,10 +14,11 @@ function setProgress(value, message) {
 play.addEventListener("click", async () => {
   play.disabled = true;
   try {
-    await downloadAndCacheAssets(setProgress);
-    setProgress(100, "Starting browser runtime...");
+    const metadata = await downloadAndCacheAssets(setProgress);
+    setProgress(90, "Preparing browser JVM...");
     canvas.style.display = "block";
-    await startMinecraft({ canvas, setProgress });
+    canvas.focus();
+    await startMinecraft({ canvas, setProgress, metadata });
   } catch (err) {
     console.error(err);
     status.textContent = `Error: ${err.message}`;
